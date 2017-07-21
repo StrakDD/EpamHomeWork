@@ -20,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/src/ua/epam/Task0203/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -55,19 +55,11 @@
       <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ua/epam/Task0203/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
+            <state relative-caret-position="357">
               <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding>
-                <element signature="e#181#182#0" expanded="true" />
-                <element signature="e#210#211#0" expanded="true" />
-                <element signature="e#251#252#0" expanded="true" />
-                <element signature="e#287#288#0" expanded="true" />
                 <element signature="docComment;method#guessNumber#0;class#Model#0" expanded="false" />
-                <element signature="e#511#512#0" expanded="true" />
-                <element signature="e#555#556#0" expanded="true" />
                 <element signature="docComment;method#checkRange#0;class#Model#0" expanded="false" />
-                <element signature="e#755#756#0" expanded="true" />
-                <element signature="e#810#811#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -598,12 +590,12 @@
       <option name="presentableId" value="Default" />
       <updated>1500626767677</updated>
       <workItem from="1500626770353" duration="1076000" />
-      <workItem from="1500627875092" duration="323000" />
+      <workItem from="1500627875092" duration="1142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1399000" />
+    <option name="totallyTimeSpent" value="2218000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -690,16 +682,8 @@
         <state relative-caret-position="493">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
             <element signature="docComment;method#guessNumber#0;class#Model#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
             <element signature="docComment;method#checkRange#0;class#Model#0" expanded="false" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -742,25 +726,6 @@
             <element signature="e#1069#1070#0" expanded="true" />
             <element signature="e#1126#1127#0" expanded="true" />
             <element signature="docComment;method#printAdditionalMessage#0;class#View#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ua/epam/Task0203/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#210#211#0" expanded="true" />
-            <element signature="e#251#252#0" expanded="true" />
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="docComment;method#guessNumber#0;class#Model#0" expanded="false" />
-            <element signature="e#511#512#0" expanded="true" />
-            <element signature="e#555#556#0" expanded="true" />
-            <element signature="docComment;method#checkRange#0;class#Model#0" expanded="false" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -770,6 +735,17 @@
         <state relative-caret-position="153">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ua/epam/Task0203/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;method#guessNumber#0;class#Model#0" expanded="false" />
+            <element signature="docComment;method#checkRange#0;class#Model#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -790,7 +766,7 @@
     <entry file="file://$PROJECT_DIR$/src/ua/epam/Task0203/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
           <folding />
         </state>
       </provider>
