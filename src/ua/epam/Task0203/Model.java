@@ -1,39 +1,89 @@
 package ua.epam.Task0203;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 /**
  * Created by Denis Starovoitenko on 21.07.2017.
  */
 public class Model {
-    private int number;
+    private int rangeMin;
+    private int rangeMax;
+    private int secretNumber;
 
-    //Setter and Getter
-    public int getNumber() {
-        return number;
+    private List<Integer> guesses;
+
+    public Model(){
+        this.guesses = new ArrayList<>();
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public boolean setRanges(int min, int max){
+        if ( (max < min) && ( Math.abs(max - min) < 2) ) return false;
+
+        this.rangeMin = min;
+        this.rangeMax = max;
+
+        return true;
+    }
+
+    public int getRangeMin(){
+        return this.rangeMin;
+    }
+
+    public int getRangeMax(){
+        return this.rangeMax;
+    }
+
+    public List<Integer> getGuesses(){
+        return this.guesses;
+    }
+
+    public void setSecretnumber() {
+
+        this.secretNumber = (int) (new Random().nextDouble()*rangeMax + rangeMin + Integer.signum(rangeMin));
     }
 
     /**
-     * This method check input number for equality to exist number
+     * This method check input secretNumber for equality to exist secretNumber
      * @param number assumption numper
-     * @return if guess number - true, otherwise - false
+     * @return if guess secretNumber - true, otherwise - false
      */
-    public boolean guessNumber(int number){
-        return this.number == number;
+    public int guessNumber(int number){
+        writeGuesses(number);
+        if ( number == secretNumber){
+            return 0;
+        }
+        return checkRange(number);
+
     }
 
     /**
-     * This method checks if digit is in some range
-     * @param min
-     * @param max
-     * @param digit
-     * @return
+     *
+     * @param number
      */
-    public boolean checkRange(int min, int max, int digit){
-        return (digit <= min) || (digit >= max);
+    public int checkRange(int number){
+        if ( number > secretNumber){
+            rangeMax = number;
+            return 1;
+        }else {
+            rangeMin = number;
+            return -1;
+        }
     }
 
+    /**
+     *
+     * @param number
+     */
+    public void writeGuesses(int number){
+        guesses.add(number);
+    }
 
+    public int getLastGuess(){
+        if (guesses.size() == 0){
+            return 0;
+        }
+        return guesses.get(guesses.size() - 1);
+    }
 }

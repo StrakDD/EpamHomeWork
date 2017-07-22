@@ -1,52 +1,38 @@
 package ua.epam.Task0203;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
  * Created by Denis Starovoitenko on 21.07.2017.
  */
 public class Controller {
-
-    private int min = 0;
-    private int max = 100;
-    private List<Integer> numberArray;
-
-    //References to the model and view objects
     private Model model;
     private View view;
 
-    //Constructor
     public Controller(Model model,View view){
         this.model = model;
         this.view = view;
-        this.numberArray = new ArrayList<>();
     }
 
-    //Main method that runs task
+    /**
+     *
+     */
     public void processRun(){
         Scanner scanner = new Scanner(System.in);
+        int info;
 
-        model.setNumber((int)(Math.random()*101));
-        startGame(scanner);
+        model.setRanges(GlobalConstants.RANGE_MIN, GlobalConstants.RANGE_MAX);
+        model.setSecretnumber();
 
-        printSuccessMessage();
+        while(true){
+            if ((info = model.guessNumber(getDigitInRange(scanner))) == 0) {
+                break;
+            }
+            view.printFailedMessage(model, info);
+        }
+
+        view.printSuccessfulMessage(model);
         scanner.close();
-    }
-
-
-    public void printFailureMessage(){
-        view.printAdditionalMessage(false, numberArray.get(numberArray.size() -1), numberArray);
-    }
-
-    public void printSuccessMessage(){
-        view.printAdditionalMessage(true, model.getNumber(), numberArray);
-    }
-
-    public void printHelpMessage(){
-        view.printWrongMessage();
-        view.printRange(min, max);
     }
 
     /**
@@ -55,16 +41,13 @@ public class Controller {
      * @return digit
      */
     public int getDigit(Scanner scanner){
-        int result;
-
-        view.printRange(min, max);
         while(!scanner.hasNextInt()){
-            printHelpMessage();
+            view.printWrongMessage();
+            view.printRange(model);
             scanner.next();
         }
 
-        result = scanner.nextInt();
-        return result;
+        return scanner.nextInt();
     }
 
     /**
@@ -73,34 +56,18 @@ public class Controller {
      * @return
      */
     public int getDigitInRange(Scanner scanner){
-        int digit = getDigit(scanner);
+        int result;
 
-        while ( model.checkRange(min, max, digit)){
-            //printHelpMessage();
+        view.printRange(model);
+        while ( isRange( result = getDigit(scanner) ) ){
             view.printWrongMessage();
-            digit = getDigit(scanner);
+            view.printRange(model);
         }
 
-        return digit;
+        return result;
     }
 
-    /**
-     * Start Game More or Less
-     * @param scanner
-     */
-    public void startGame(Scanner scanner){
-        int digit = getDigitInRange(scanner);
-        while(!model.guessNumber(digit)){
-            if (digit > model.getNumber()){
-                max = digit;
-            }
-            else {
-                min = digit;
-            }
-            numberArray.add(digit);
-            printFailureMessage();
-            digit = getDigitInRange(scanner);
-        }
-        numberArray.add(digit);
+    public boolean isRange(int number){
+        return (number <= model.getRangeMin()) || (number >= model.getRangeMax());
     }
 }

@@ -1,6 +1,5 @@
 package ua.epam.Task0203;
 
-import java.util.List;
 
 /**
  * Created by Denis Starovoitenko on 21.07.2017.
@@ -9,55 +8,43 @@ public class View {
     public static final String HEADER = "**********************************";
     public static final String INFORMATION_DATE = "You need to guess the exist number in range ";
     public static final String WRONG_INPUT_DATA = "Wrong input data!!";
+    public static final String SUCCESS_TRY = "Congratulation!!! Required number: ";
+    public static final String NUMBER_ATTEMPS = "Number of attempts: ";
+    public static final String MORE_INF = "is more than secret number!";
+    public static final String LESS_INF = "is less than secret number!";
+    public static final String CHECKED_NUMBERS = "All checked numbers : ";
 
-    /**
-     * This method print message without adding new line to the end
-     * @param message
-     */
     public void printMessage(String message){
         System.out.print(message);
     }
 
-    /**
-     * This method print message with adding new line to the end
-     * @param message
-     */
     public void printlnMessage(String message){
         System.out.println(message);
     }
 
-    /**
-     * Print Range
-     * @param digit1
-     * @param digit2
-     */
-    public void printRange(int digit1, int digit2){
-        printMessage(String.format("%s[ %d - %d ] :", View.INFORMATION_DATE, digit1, digit2));
+    public void printRange(Model model){
+        printMessage(String.format("%s[ %d - %d ] :", INFORMATION_DATE,
+                model.getRangeMin(), model.getRangeMax()));
     }
 
-    /**
-     * Print Warning
-     */
     public void printWrongMessage(){
-        printMessage(View.WRONG_INPUT_DATA + " ");
+        printMessage(WRONG_INPUT_DATA + " ");
     }
 
-    /**
-     * If isSuccess = true print Congratulation, otherwise Help Information
-     * @param isSuccess
-     * @param number
-     * @param array
-     */
-    public void printAdditionalMessage(boolean isSuccess, int number, List<Integer> array){
-        printlnMessage(View.HEADER);
 
-        if (!isSuccess){
-            printlnMessage("Last number : " + number);
-            printlnMessage("All checked numbers : " + array);
+    public void printFailedMessage(Model model, int info){
+        printlnMessage(HEADER);
+        if (info == 1){
+            printlnMessage(String.format("%d %s ", model.getLastGuess(),MORE_INF ));
+        }else {
+            printlnMessage(String.format("%d %s ", model.getLastGuess(),LESS_INF ));
         }
-        else {
-            printlnMessage("Congratulation!!! Required number: " + number);
-            printlnMessage("Number of attempts: " + array.size() + " : " + array);
-        }
+        printlnMessage(CHECKED_NUMBERS + model.getGuesses());
+    }
+
+    public void printSuccessfulMessage(Model model){
+        printlnMessage(HEADER);
+        printlnMessage(SUCCESS_TRY + model.getLastGuess());
+        printlnMessage(NUMBER_ATTEMPS + model.getGuesses().size() + " : " + model.getGuesses());
     }
 }
