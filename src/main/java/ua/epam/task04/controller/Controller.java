@@ -17,9 +17,11 @@ public class Controller {
     }
 
 
-
+    /**
+     * Start process of making Record
+     */
     public void processUser(){
-        Utility utility = new Utility(view);
-        utility.buildRecord();
+        RecordUtility recordUtility = new RecordUtility(view);
+        recordUtility.buildRecord();
     }
 }

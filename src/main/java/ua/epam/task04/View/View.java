@@ -15,7 +15,7 @@ public class View {
         System.out.println(message);
     }
 
-    public String getMessage(String...messages){
+    public String printMessage(String...messages){
         StringBuilder builder = new StringBuilder();
 
         for (String message : messages) {
@@ -25,12 +25,20 @@ public class View {
         return builder.toString();
     }
 
+    /**
+     * Output informational message depend from input date and pattern
+     * @param message
+     * @param pattern
+     */
     public void printInfo(String message, Pattern pattern){
-        printMessage(getMessage(MessageConstants.ENTER, message, MessageConstants.LBRACKET,
-                                pattern.pattern(), MessageConstants.RBRACKET, MessageConstants.COLONE));
+        printMessage(MessageConstants.ENTER, message, MessageConstants.LBRACKET,
+                    pattern.pattern(), MessageConstants.RBRACKET, MessageConstants.COLONE);
     }
 
+    /**
+     * Unacceptable input date
+     */
     public void printError(){
-        printMessage(MessageConstants.ERROR);
+        printlnMessage(MessageConstants.ERROR);
     }
 }

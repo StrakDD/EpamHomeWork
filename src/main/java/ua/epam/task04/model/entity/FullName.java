@@ -9,6 +9,7 @@ public class FullName {
     private String patronymic;
 
     public FullName(){
+        this("", "", "");
     }
 
     public FullName(String surName, String name, String patronymic){
@@ -41,8 +42,17 @@ public class FullName {
         this.patronymic = patronymic;
     }
 
+    /**
+     * Short name : Surname and firs char in name preceding dot.
+     * @return String represents short name
+     */
     public String getShortName(){
 
         return new StringBuilder(surName).append(" ").append(name.charAt(0)).append(".").toString();
+    }
+
+    @Override
+    public String toString() {
+        return surName + " " + name + " " + patronymic;
     }
 }

@@ -13,5 +13,11 @@ public class MessageConstants {
     public static final String FULL_NAME = "<Surname Name Patronymic>";
     public static final String NICK_NAME = "<NickName>";
     public static final String COMMENT = "<Commentary>";
-    public static final String GROUP = "<GROUP>";
+    public static final String GROUP = "<Group>";
+    public static final String PHONE1 = "<Home number xxx-xx-xx>";
+    public static final String PHONE2 = "<Moblie number (xxx)-xxx-xx-xx>";
+    public static final String QUESTION_PHONE = "(y/n) for additional mobile phone";
+    public static final String EMAIL = "<Email xxx@xx.xx>";
+    public static final String SKYPE = "<Skype nickname>";
+    public static final String ADDRESS = "<Address: Index City Street №Building №Apartment>";
 }
