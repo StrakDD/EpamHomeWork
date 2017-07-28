@@ -23,5 +23,6 @@ public class Controller {
     public void processUser(){
         RecordUtility recordUtility = new RecordUtility(view);
         recordUtility.buildRecord();
+        model.addRecord(recordUtility.getRecord());
     }
 }

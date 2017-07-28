@@ -20,4 +20,5 @@ public class Model {
     public void addRecord(Record record){
         noteBook.addRecord(record);
     }
+
 }
