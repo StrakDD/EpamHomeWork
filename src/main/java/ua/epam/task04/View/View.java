@@ -15,14 +15,14 @@ public class View {
         System.out.println(message);
     }
 
-    public String printMessage(String...messages){
+    public void printMessage(String...messages){
         StringBuilder builder = new StringBuilder();
 
         for (String message : messages) {
             builder.append(message);
         }
 
-        return builder.toString();
+        printMessage(builder.toString());
     }
 
     /**
