@@ -20,4 +20,6 @@ public class MessageConstants {
     public static final String EMAIL = "<Email xxx@xx.xx>";
     public static final String SKYPE = "<Skype nickname>";
     public static final String ADDRESS = "<Address: Index City Street №Building №Apartment>";
+
+    public static final String EXCEPTION = "Warning, Can't add new record to the NoteBook. Nickname is already exist!!";
 }

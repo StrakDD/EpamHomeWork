@@ -1,5 +1,6 @@
 package ua.epam.task04.model;
 
+import ua.epam.task04.model.entity.IllegalNickNameException;
 import ua.epam.task04.model.entity.NoteBook;
 import ua.epam.task04.model.entity.Record;
 
@@ -17,8 +18,10 @@ public class Model {
      *
      * @param record
      */
-    public void addRecord(Record record){
+    public void addRecord(Record record) throws IllegalNickNameException{
+        noteBook.isNickName(record);
         noteBook.addRecord(record);
+        noteBook.printNotebook();
     }
 
 }

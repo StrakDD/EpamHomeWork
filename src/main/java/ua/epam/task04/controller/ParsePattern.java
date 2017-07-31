@@ -1,6 +1,7 @@
 package ua.epam.task04.controller;
 
 
+import ua.epam.task04.View.MessageConstants;
 import ua.epam.task04.View.View;
 
 import java.util.Scanner;
@@ -25,7 +26,7 @@ public class ParsePattern {
         view.printInfo(message, pattern);
 
         while (!reader.hasNext(pattern)){
-            view.printError();
+            view.printError(MessageConstants.ERROR);
             view.printInfo(message, pattern);
             reader.nextLine();
         }

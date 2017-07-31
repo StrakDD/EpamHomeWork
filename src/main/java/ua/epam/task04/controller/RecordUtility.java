@@ -1,7 +1,6 @@
 package ua.epam.task04.controller;
 
 import ua.epam.task04.View.MessageConstants;
-import ua.epam.task04.View.View;
 import ua.epam.task04.model.entity.*;
 
 import static ua.epam.task04.controller.ParsePattern.readPattern;
@@ -12,10 +11,9 @@ import static ua.epam.task04.controller.ParsePattern.readPattern;
 public class RecordUtility {
 
     private Record record;
-    private View view;
 
-    public RecordUtility(View view){
-        this.view = view;
+    public RecordUtility(){
+        record = new Record();
     }
 
     public Record getRecord() {
@@ -24,14 +22,6 @@ public class RecordUtility {
 
     public void setRecord(Record record) {
         this.record = record;
-    }
-
-    public View getView() {
-        return view;
-    }
-
-    public void setView(View view) {
-        this.view = view;
     }
 
     public void getFullName(){
@@ -93,7 +83,6 @@ public class RecordUtility {
      * Make record from input data set
      */
     public void buildRecord(){
-        record = new Record();
         getFullName();
         getNickName();
         getCommentary();
@@ -102,5 +91,9 @@ public class RecordUtility {
         getEmail();
         getSkype();
         getAddress();
+    }
+
+    public void clearRecord(){
+        record = new Record();
     }
 }

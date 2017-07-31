@@ -1,7 +1,9 @@
 package ua.epam.task04.controller;
 
+import ua.epam.task04.View.MessageConstants;
 import ua.epam.task04.View.View;
 import ua.epam.task04.model.Model;
+import ua.epam.task04.model.entity.IllegalNickNameException;
 
 
 /**
@@ -21,8 +23,25 @@ public class Controller {
      * Start process of making Record
      */
     public void processUser(){
-        RecordUtility recordUtility = new RecordUtility(view);
+        RecordUtility recordUtility = new RecordUtility();
         recordUtility.buildRecord();
-        model.addRecord(recordUtility.getRecord());
+
+        processAddRecord(recordUtility);
+        recordUtility.clearRecord();
+        recordUtility.buildRecord();
+        processAddRecord(recordUtility);
+
+    }
+
+    public void processAddRecord(RecordUtility recordUtility) {
+        while (true) {
+            try {
+                model.addRecord(recordUtility.getRecord());
+                break;
+            } catch (IllegalNickNameException e) {
+                view.printError(MessageConstants.EXCEPTION);
+                recordUtility.getNickName();
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ public class View {
     /**
      * Unacceptable input date
      */
-    public void printError(){
-        printlnMessage(MessageConstants.ERROR);
+    public void printError(String message){
+        printlnMessage(message);
     }
 }
