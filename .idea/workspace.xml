@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9604b0b2-703a-49e4-907d-1bd9467dc82f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/model/entity/IllegalNickNameException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/View/MessageConstants.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/View/MessageConstants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/View/View.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/View/View.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/controller/Controller.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/controller/Controller.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/controller/ParsePattern.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/controller/ParsePattern.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/controller/RecordUtility.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/controller/RecordUtility.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ua/epam/task04/model/entity/NoteBook.java" afterPath="$PROJECT_DIR$/src/main/java/ua/epam/task04/model/entity/NoteBook.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -142,6 +134,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="task5" />
+    </push-targets>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -1173,7 +1168,7 @@
       <workItem from="1501418086731" duration="343000" />
       <workItem from="1501420097713" duration="60000" />
       <workItem from="1501423874598" duration="344000" />
-      <workItem from="1501453136978" duration="5157000" />
+      <workItem from="1501453136978" duration="5451000" />
     </task>
     <task id="LOCAL-00001" summary="Add Task &quot;NoteBook with regular expressions &quot;. Not Finished!!!">
       <created>1501149891475</created>
@@ -1210,7 +1205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501418350370</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Task5!! Exception on record with same NickName!!So far without JSP...in processing.">
+      <created>1501459232216</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1501459232216</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1246,7 +1248,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73519000" />
+    <option name="totallyTimeSpent" value="73813000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1321,7 +1323,8 @@
     <MESSAGE value="Add Task &quot;NoteBook with regular expressions &quot;. Not Finished!!!" />
     <MESSAGE value="Task &quot;NoteBook&quot; Completed!!" />
     <MESSAGE value="Some refactoring!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some refactoring!!" />
+    <MESSAGE value="Add Task5!! Exception on record with same NickName!!So far without JSP...in processing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Task5!! Exception on record with same NickName!!So far without JSP...in processing." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
