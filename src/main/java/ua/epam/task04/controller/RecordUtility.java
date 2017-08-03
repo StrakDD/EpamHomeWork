@@ -1,7 +1,9 @@
 package ua.epam.task04.controller;
 
-import ua.epam.task04.View.MessageConstants;
+import ua.epam.task04.View.View;
 import ua.epam.task04.model.entity.*;
+import ua.epam.task04.model.entity.builder.BuildRecord;
+import ua.epam.task04.model.entity.builder.EmptyRecord;
 
 import static ua.epam.task04.controller.ParsePattern.readPattern;
 
@@ -13,7 +15,9 @@ public class RecordUtility {
     private Record record;
 
     public RecordUtility(){
-        record = new Record();
+        BuildRecord buildRecord = new BuildRecord();
+        buildRecord.setBuilder(new EmptyRecord());
+        record = buildRecord.buildRecord();
     }
 
     public Record getRecord() {
@@ -25,47 +29,47 @@ public class RecordUtility {
     }
 
     public void getFullName(){
-        String[] names = readPattern(MessageConstants.FULL_NAME, RegularExpressions.FIO).split(" ");
+        String[] names = readPattern(View.bundle.getString("FULL_NAME"), View.bundle.getString("FIO")).split(" ");
         record.setFullName(new FullName(names[0], names[1], names[2]));
     }
 
     public void getNickName(){
-        record.setNickName(readPattern(MessageConstants.NICK_NAME, RegularExpressions.NICK_NAME));
+        record.setNickName(readPattern(View.bundle.getString("NICK_NAME"), RegularExpressions.NICK_NAME));
     }
 
     public void getCommentary(){
-        record.setCommentary(readPattern(MessageConstants.COMMENT, RegularExpressions.COMMENTARY));
+        record.setCommentary(readPattern(View.bundle.getString("COMMENT"), RegularExpressions.COMMENTARY));
     }
 
     public void getGroup(){
-        record.setGroup(Group.valueOf(readPattern(MessageConstants.GROUP, RegularExpressions.GROUP).toUpperCase()));
+        record.setGroup(Group.valueOf(readPattern(View.bundle.getString("GROUP"), RegularExpressions.GROUP).toUpperCase()));
     }
 
     public void getPhone(){
-        String home = readPattern(MessageConstants.PHONE1, RegularExpressions.PHONE1);
-        String mobile = readPattern(MessageConstants.PHONE2, RegularExpressions.PHONE2);
+        String home = readPattern(View.bundle.getString("PHONE1"), RegularExpressions.PHONE1);
+        String mobile = readPattern(View.bundle.getString("PHONE2"), RegularExpressions.PHONE2);
         String mobileAdd = "";
-        String decision = readPattern(MessageConstants.QUESTION_PHONE, "(?i)[yn]");
+        String decision = readPattern(View.bundle.getString("QUESTION_PHONE"), "(?i)[yn]");
 
         if (decision.equalsIgnoreCase("y")) {
-            mobileAdd = readPattern(MessageConstants.PHONE2, RegularExpressions.PHONE2);
+            mobileAdd = readPattern(View.bundle.getString("PHONE2"), RegularExpressions.PHONE2);
         }
         record.setPhone(new PhoneNumber(home, mobile, mobileAdd));
     }
 
     public void getEmail(){
-        record.setEmail(readPattern(MessageConstants.EMAIL, RegularExpressions.EMAIL));
+        record.setEmail(readPattern(View.bundle.getString("EMAIL"), RegularExpressions.EMAIL));
     }
 
     public void getSkype(){
-        record.setSkype(readPattern(MessageConstants.SKYPE, RegularExpressions.SKYPE));
+        record.setSkype(readPattern(View.bundle.getString("SKYPE"), RegularExpressions.SKYPE));
     }
 
     /**
      * Read Address in one string and than parse for pieces
      */
     public void getAddress(){
-        String[] adress = readPattern(MessageConstants.ADDRESS, RegularExpressions.ADDRESS)
+        String[] adress = readPattern(View.bundle.getString("ADDRESS"), View.bundle.getString("REG_ADDRESS"))
                             .split(" ");
 
         int index = Integer.parseInt(adress[0]);
@@ -82,7 +86,7 @@ public class RecordUtility {
     /**
      * Make record from input data set
      */
-    public void buildRecord(){
+    public void inputRecord(){
         getFullName();
         getNickName();
         getCommentary();

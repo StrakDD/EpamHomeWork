@@ -1,11 +1,15 @@
 package ua.epam.task04.model.entity;
 
+import ua.epam.task04.model.entity.builder.BuildRecord;
+import ua.epam.task04.model.entity.builder.EmptyRecord;
+import ua.epam.task04.model.entity.prototype.Copyable;
+
 import java.util.Date;
 
 /**
  * Created by Denis Starovoitenko on 27.07.2017.
  */
-public class Record {
+public class Record implements Copyable{
     private FullName fullName;
     private String nickName;
     private String commentary;
@@ -18,16 +22,7 @@ public class Record {
     private Date change;
 
     public Record(){
-        fullName = new FullName();
-        nickName = "";
-        commentary = "";
-        group = Group.STUDENT;
-        phone = new PhoneNumber();
-        email = "";
-        skype = "";
-        address = new Address();
-        change = new Date();
-        record = null;
+
     }
 
     public Date getRecord() {
@@ -135,5 +130,24 @@ public class Record {
                 .append("\n(Date) Record to the NoteBook: ").append(record);
 
         return  build.toString();
+    }
+
+    @Override
+    public Object copy() {
+        BuildRecord build = new BuildRecord();
+        build.setBuilder(new EmptyRecord());
+        Record record = build.buildRecord();
+        record.setAddress(address);
+        record.setEmail(email);
+        record.setChange(change);
+        record.setCommentary(commentary);
+        record.setRecord(this.record);
+        record.setGroup(group);
+        record.setPhone(phone);
+        record.setFullName(fullName);
+        record.setNickName(nickName);
+        record.setSkype(skype);
+
+        return record;
     }
 }

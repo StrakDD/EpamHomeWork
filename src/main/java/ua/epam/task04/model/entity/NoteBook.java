@@ -32,7 +32,6 @@ public class NoteBook {
 
     public boolean isNickName(Record check) throws IllegalNickNameException{
         for (Record record : records) {
-            System.out.println("---------------->" + record.getNickName() +" "+ check.getNickName());
             if (record.getNickName().equals(check.getNickName())){
                 throw new IllegalNickNameException("NickName is already exist");
             }

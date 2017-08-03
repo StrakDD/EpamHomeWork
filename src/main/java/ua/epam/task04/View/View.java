@@ -1,11 +1,14 @@
 package ua.epam.task04.View;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 
 /**
  * Created by Denis Starovoitenko on 27.07.2017.
  */
 public class View {
+    public static ResourceBundle bundle = ResourceBundle.getBundle("Russian", new Locale("ru_RU"));
 
     public void printMessage(String message){
         System.out.print(message);
@@ -31,8 +34,7 @@ public class View {
      * @param pattern
      */
     public void printInfo(String message, Pattern pattern){
-        printMessage(MessageConstants.ENTER, message, MessageConstants.LBRACKET,
-                    pattern.pattern(), MessageConstants.RBRACKET, MessageConstants.COLONE);
+        printMessage(bundle.getString("ENTER"), message, "(", pattern.pattern(), "):");
     }
 
     /**
@@ -40,5 +42,19 @@ public class View {
      */
     public void printError(String message){
         printlnMessage(message);
+    }
+
+    public void setBundle(String name){
+        if (name.equalsIgnoreCase("ENGLISH")){
+            Locale.setDefault(Locale.ENGLISH);
+            bundle = ResourceBundle.getBundle("ENGLISH", new Locale("en_Us"));
+        }else if (name.equalsIgnoreCase("RUSSIAN")){
+            Locale.setDefault(new Locale("ru_RU"));
+            bundle = ResourceBundle.getBundle("RUSSIAN", new Locale("ru_Ru"));
+        }else {
+            throw new RuntimeException("No appropriate bundle " + name);
+        }
+
+
     }
 }
